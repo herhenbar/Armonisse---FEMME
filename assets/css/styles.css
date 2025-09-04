@@ -2092,7 +2092,38 @@ a.btn-outline[href="#produtos"]{
     100%{
         filter:brightness(1.2) drop-shadow(0 0 15px rgba(26,107,79,.6))
     }
-
+}
+.product-card:nth-child(5) .product-info::after{
+    content:'R̶$̶ ̶30,̶00̶̶\00A0\00A0\00A0 EXCLUSIVO DO COMBO 03';
+    text-transform:uppercase!important;
+    box-shadow:0 2px 6px rgba(0,0,0,.12)!important;
+    content:'R̶$̶ ̶1̶8̶,̶9̶0̶\00A0\00A0\00A0SÓ DISPONÍVEL AQUI'!important
+}
+.product-card:nth-child(5) .product-info::after,.product-card:nth-child(6) .product-info::after{
+    background:linear-gradient(45deg,#1a6b4f,#27ae60,#2ecc71)!important;
+    box-shadow:0 4px 15px rgba(26,107,79,.4),0 0 20px rgba(26,107,79,.3),inset 0 1px 3px rgba(244,228,188,.2)!important;
+    color:#f4e4bc!important;
+    position:absolute!important;
+    left:50%!important;
+    transform:translateX(-50%)!important;
+    font-size:.85rem!important;
+    padding:8px 16px!important
+}
+.product-card:nth-child(6) .product-info::after{
+    content:'R̶$̶ ̶2̶8̶,̶0̶0̶\00A0\00A0\00A0PROMOÇÃO LIMITADA'!important
+}
+.product-card:nth-child(5) .product-info::after{
+    content:'R̶$̶ ̶1̶8̶,̶9̶0̶\00A0\00A0\00A0SÓ DISPONÍVEL AQUI';
+    border:2px solid #1a6b4f!important;
+    bottom:110px!important;
+    border-radius:30px!important
+}
+.product-card:nth-child(6) .product-info::after{
+    content:'R̶$̶ ̶2̶8̶,̶0̶0̶\00A0\00A0\00A0PROMOÇÃO LIMITADA'!important;
+    border:2px solid #1a6b4f!important;
+    bottom:100px!important;
+    border-radius:30px!important
+}
 .combo-list li:first-child,.combo-list li:nth-child(2),.combo-list li:nth-child(3){
     background:linear-gradient(135deg,#7a2d44 0,#a94463 50%,#7a2d44 100%)!important;
     border:1px solid #7a2d44!important;
@@ -2999,42 +3030,12 @@ section:has(.testimonial-wall){
 }
 
 
-/* Override all nth-child rules to make cards 4,5,6 identical to 1,2,3 */
-.product-card:nth-child(4),
-.product-card:nth-child(5),
-.product-card:nth-child(6) {
-    background: linear-gradient(145deg, #fdfcfb 0, #f7f5f3 25%, #f2eee8 50%, #ede7df 75%, #f5f1eb 100%) !important;
-    min-height: auto !important;
-}
 
-.product-card:nth-child(4) .product-img img,
-.product-card:nth-child(5) .product-img img,
-.product-card:nth-child(6) .product-img img {
-    max-width: none !important;
-    height: 94% !important;
-    padding: 0 !important;
-    border-radius: 12px !important;
-    width: auto !important;
-}
 
-.product-card:nth-child(4) .badge-premium,
-.product-card:nth-child(5) .badge-premium,
-.product-card:nth-child(6) .badge-premium {
-    background: #7a2d44 !important;
-    color: #fff !important;
-}
 
-.product-card:nth-child(4) .product-info h3,
-.product-card:nth-child(5) .product-info h3,
-.product-card:nth-child(6) .product-info h3 {
-    color: #7a2d44 !important;
-}
 
-.product-card:nth-child(4):hover,
-.product-card:nth-child(5):hover,
-.product-card:nth-child(6):hover {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1) !important;
-}
+
+
 
 
 
