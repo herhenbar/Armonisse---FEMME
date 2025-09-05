@@ -2019,8 +2019,7 @@ a.btn-outline[href="#produtos"]{
     color:#7a2d44!important;
     font-size:1.3rem!important
 }
-.garantia-main,.nav-arrow,.product-card:nth-child(4) .price-container,.product-card:nth-child(4) .product-img::after,.product-card:nth-child(5) .price-container,.product-card:nth-child(5) .product-img::after,.product-card:nth-child(6) .price-container,.product-card:nth-child(6) .product-img::after{
-    display:none!important
+
 }
 .product-card:first-child .price-container,.product-card:nth-child(2) .price-container{
     margin-top:20px!important;
@@ -2032,46 +2031,10 @@ a.btn-outline[href="#produtos"]{
 .product-card:first-child .product-description div,.product-card:nth-child(2) .product-description div,.product-card:nth-child(3) .product-description div{
     color:#2d5a54!important
 }
-.product-card:nth-child(4) .old-price,.product-card:nth-child(5) .old-price,.product-card:nth-child(6) .old-price{
-    color:#7a2d44!important;
-    font-size:1.3rem!important;
-    font-weight:800!important;
-    text-decoration:line-through!important;
-    text-decoration-thickness:2px!important;
-    display:block!important;
-    margin-bottom:8px!important;
-    text-shadow:0 1px 2px rgba(0,0,0,.1)!important
-}
-.product-card:nth-child(4) .price-container span:last-child,.product-card:nth-child(5) .price-container span:last-child,.product-card:nth-child(6) .price-container span:last-child{
-    color:#1a6b4f!important;
-    font-size:1rem!important;
-    font-weight:700!important;
-    display:block!important;
-    text-transform:uppercase!important;
-    letter-spacing:.5px!important
-}
-.product-card:nth-child(5) .product-img::after,.product-card:nth-child(6) .product-img::after{
-    background:linear-gradient(45deg,#1a6b4f,#27ae60,#2ecc71)!important;
-    color:#f4e4bc!important;
-    padding:8px 15px!important;
-    border-radius:20px!important;
-    font-size:.75rem!important;
-    font-weight:700!important;
-    text-transform:uppercase!important;
-    letter-spacing:1px!important;
-    border:2px solid #1a6b4f!important;
-    box-shadow:0 4px 15px rgba(26,107,79,.4),0 0 20px rgba(26,107,79,.3),inset 0 1px 3px rgba(244,228,188,.2)!important;
-    animation:2.5s ease-in-out infinite alternate badgeGlow!important;
-    text-shadow:0 1px 2px rgba(0,0,0,.3)!important
-}
-.product-card:nth-child(4) .product-info::after,.product-card:nth-child(5) .product-info::after,.product-card:nth-child(6) .product-info::after{
-    text-shadow:0 1px 2px rgba(0,0,0,.3)!important;
-    letter-spacing:.4px!important;
-    font-weight:600!important;
-    text-transform:uppercase!important;
-    white-space:nowrap!important;
-    z-index:5!important
-}
+
+
+
+
 @keyframes badgeGlow{
     0%{
         filter:brightness(1) drop-shadow(0 0 5px rgba(26,107,79,.3))
@@ -2271,15 +2234,8 @@ html{
 .garantia-section{
     padding-top:calc(100px - 1cm)!important
 }
-.product-card:nth-child(4) .btn{
-    margin-top:190px!important
-}
-.product-card:nth-child(5) .btn{
-    margin-top:245px!important
-}
-.product-card:nth-child(6) .btn{
-    margin-top:170px!important
-}
+
+
 .installment-info{
     margin-top:5px!important;
     text-align:center!important
@@ -2892,10 +2848,7 @@ section:has(.testimonial-wall){
     position:relative;
     z-index:15
 }
-@media screen and (max-width:768px){
-    .product-card:nth-child(4) .product-info::after{
-        display:none!important
-    }
+
     .femme-nav ul{
         scroll-snap-type:x mandatory!important;
         gap:5px!important;
@@ -3180,5 +3133,6 @@ section:has(.testimonial-wall){
     display: none !important;
     content: none !important;
 }
+
 
 
