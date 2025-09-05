@@ -3170,4 +3170,29 @@ section:has(.testimonial-wall){
 }
 
 
+.product-card:nth-child(4) .product-img img,
+.product-card:nth-child(5) .product-img img,
+.product-card:nth-child(6) .product-img img {
+    border-radius: 12px !important;
+}
 
+.product-card:nth-child(4) .product-img img,
+.product-card:nth-child(5) .product-img img,
+.product-card:nth-child(6) .product-img img {
+    height: 94% !important;  /* Match the first 3 */
+    transform: scaleX(1.1) !important;  /* Match the horizontal scale */
+}
+
+
+
+.femme-nav ul li a {
+    font-size: 0.9rem !important;  /* Restore original size */
+    padding: 6px 0 !important;
+}
+
+
+/* ALTERNATIVE - HIDE ANY GUARANTEE BOX IN THAT SECTION */
+.garantia-section .garantia-main,
+.garantia-section .garantia-content > div:last-child {
+    display: none !important;
+}
