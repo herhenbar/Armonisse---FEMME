@@ -3186,7 +3186,7 @@ section:has(.testimonial-wall){
 
 .femme-nav ul li a {
     font-size: 1rem !important;  /* Bigger */
-    padding: 10px 16px !important;  /* More padding */
+    padding: 9px 8px !important;  /* More padding */
     font-weight: 600 !important;
 }
 
@@ -3210,3 +3210,4 @@ section:has(.testimonial-wall){
     border-radius: 12px !important;
     object-fit: contain !important;
 }
+
