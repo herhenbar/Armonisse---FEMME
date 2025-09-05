@@ -3069,6 +3069,34 @@ section:has(.testimonial-wall){
     }
 }
 
+/* FIX IMAGES FOR PRODUCTS 4-6 */
+.product-card:nth-child(4) .product-img,
+.product-card:nth-child(5) .product-img,
+.product-card:nth-child(6) .product-img {
+    height: 360px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+.product-card:nth-child(4) .product-img img,
+.product-card:nth-child(5) .product-img img,
+.product-card:nth-child(6) .product-img img 
+{
+    height: 360px !important;
+    width: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 12px !important;
+    transform: scaleX(1.1) !important;
+    max-width: none !important;
+    object-fit: contain !important;
+}
 
 
 
