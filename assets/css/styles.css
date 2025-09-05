@@ -3134,5 +3134,31 @@ section:has(.testimonial-wall){
     content: none !important;
 }
 
+/* EMERGENCY FIX - RESTORE IMAGE CONTAINERS */
+.product-card .product-img {
+    height: 360px !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    text-align: center !important;
+    position: relative !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.product-card .product-img img {
+    height: 94% !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+    position: static !important;
+    transform: scaleX(1.1) !important;
+    top: auto !important;
+    left: auto !important;
+}
 
 
