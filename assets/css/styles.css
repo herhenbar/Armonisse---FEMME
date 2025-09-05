@@ -3134,31 +3134,40 @@ section:has(.testimonial-wall){
     content: none !important;
 }
 
-/* EMERGENCY FIX - RESTORE IMAGE CONTAINERS */
-.product-card .product-img {
+/* IMAGE FIX ONLY FOR PRODUCTS 4, 5, 6 */
+.product-card:nth-child(4) .product-img,
+.product-card:nth-child(5) .product-img,
+.product-card:nth-child(6) .product-img {
     height: 360px !important;
     width: 100% !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
     overflow: hidden !important;
-    text-align: center !important;
     position: relative !important;
     background: transparent !important;
     border: none !important;
+    box-shadow: none !important;
     padding: 0 !important;
 }
 
-.product-card .product-img img {
-    height: 94% !important;
+.product-card:nth-child(4) .product-img img,
+.product-card:nth-child(5) .product-img img,
+.product-card:nth-child(6) .product-img img {
+    position: relative !important;
+    height: 340px !important;
     width: auto !important;
+    max-width: 90% !important;
     object-fit: contain !important;
     display: block !important;
     margin: 0 auto !important;
-    position: static !important;
-    transform: scaleX(1.1) !important;
     top: auto !important;
     left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    border-radius: 12px !important;
 }
+
 
 
