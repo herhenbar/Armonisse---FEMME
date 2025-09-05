@@ -3019,6 +3019,55 @@ section:has(.testimonial-wall){
 
 
 
+/* NUCLEAR OVERRIDE - MAKE PRODUCTS 4-6 IDENTICAL TO 1-3 */
+.product-card:nth-child(4),
+.product-card:nth-child(5),
+.product-card:nth-child(6) {
+    background: linear-gradient(to bottom,#fff9fb,#fef1f4) !important;
+    border: 1px solid #eacbd2 !important;
+    min-height: auto !important;
+}
+
+.product-card:nth-child(4) .badge-premium,
+.product-card:nth-child(5) .badge-premium,
+.product-card:nth-child(6) .badge-premium {
+    background: #7a2d44 !important;
+    color: #fff !important;
+}
+
+.product-card:nth-child(4) .btn,
+.product-card:nth-child(5) .btn,
+.product-card:nth-child(6) .btn {
+    margin-top: 20px !important;
+}
+
+.product-card:nth-child(4) .product-info::after,
+.product-card:nth-child(5) .product-info::after,
+.product-card:nth-child(6) .product-info::after {
+    display: none !important;
+    content: none !important;
+}
+
+.product-card:nth-child(4) .product-info h3,
+.product-card:nth-child(5) .product-info h3,
+.product-card:nth-child(6) .product-info h3 {
+    color: #7a2d44 !important;
+}
+
+.product-card:nth-child(4) .subhead-destaque,
+.product-card:nth-child(5) .subhead-destaque,
+.product-card:nth-child(6) .subhead-destaque {
+    color: #7a2d44 !important;
+}
+
+/* Kill all mobile overrides too */
+@media screen and (max-width:768px) {
+    .product-card:nth-child(4) .product-info::after,
+    .product-card:nth-child(5) .product-info::after,
+    .product-card:nth-child(6) .product-info::after {
+        display: none !important;
+    }
+}
 
 
 
