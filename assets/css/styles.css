@@ -3185,8 +3185,8 @@ section:has(.testimonial-wall){
 
 
 .femme-nav ul li a {
-    font-size: 1rem !important;  /* Bigger */
-    padding: 9px 8px !important;  /* More padding */
+    font-size: 0.9rem !important;  /* Bigger */
+    padding: 9px 14px !important;  /* More padding */
     font-weight: 600 !important;
 }
 
@@ -3211,3 +3211,13 @@ section:has(.testimonial-wall){
     object-fit: contain !important;
 }
 
+/* FIX NAV MOBILE - MAIS JUNTO */
+@media screen and (max-width: 768px) {
+    .femme-nav ul {
+        gap: 2px !important;
+    }
+    .femme-nav ul li a {
+        font-size: 9px !important;
+        padding: 2px 3px !important;
+    }
+}
