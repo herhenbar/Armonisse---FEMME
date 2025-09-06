@@ -1080,17 +1080,17 @@ a.cta-primary:hover,button.cta-primary:hover{
     left:200px
 }
 .b3{
-    top:80px;
-    right:210px;
+    top:-5px;
+    right:300px;
     animation-name:flutuar-leste
 }
 .b4{
-    top:520px;
-    right:130px
+    top:30px;
+    right:-30px
 }
 .b5{
     top:30px;
-    left:680px;
+    left:420px;
     width:85px
 }
 @keyframes flutuar{
@@ -3221,3 +3221,300 @@ section:has(.testimonial-wall){
         padding: 2px 3px !important;
     }
 }
+
+/* ABSOLUTE NUCLEAR - KILL ALL OTHER STYLES */
+.product-card:nth-child(4) .product-img img,
+.product-card:nth-child(5) .product-img img,
+.product-card:nth-child(6) .product-img img {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    clip-path: inset(0 round 12px) !important;
+}
+
+
+/* PATCH-HEAD-SIZE (override) */
+.femme-hero h1 { font-size: 2.6rem !important; letter-spacing: .02em !important; }
+.femme-hero p  { font-size: 1.30rem !important; }
+
+@media (max-width:768px){
+  .femme-hero h1 { font-size: 1.7rem !important; }
+  .femme-hero p  { font-size: 1.20rem !important; }
+}
+
+
+/* HEAD — fonte + medidas (premium, mais “cheia”) */
+.femme-hero h1{
+  font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif !important;
+  font-weight: 700 !important;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: .3px !important;
+  text-transform: none !important;
+}
+.femme-hero p{
+  font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: clamp(1.05rem, 2.4vw, 1.30rem) !important;
+}
+
+
+
+/* micro-linha abaixo da sub (linha própria) */
+.microline{
+  display:block;
+  text-align:center;
+  font-style:italic;
+  font-size:1.05rem;
+  opacity:.9;
+  margin-top:.25rem;
+}
+@media (max-width:768px){
+  .microline{ font-size:1rem; }
+}
+
+
+/* MOBILE FIRST: hero e CTAs */
+@media (max-width:480px){
+  .femme-hero h1{font-size:1.5rem!important; letter-spacing:.01em!important; line-height:1.15!important;}
+  .femme-hero p{font-size:1.05rem!important;}
+  .microline{font-size:.98rem!important;}
+  .cta-group .btn{width:100%; margin:6px 0;} /* toque fácil + acima da dobra */
+
+}
+/* Head mais compacta */
+.femme-hero h1{ letter-spacing:.02em!important; }
+
+/* Linha dourada sob o H1 (use na sua tag existente: class="gold-line") */
+.femme-hero .gold-line{
+  display:block; width:80px; height:3px; margin:10px auto 8px;
+  background:linear-gradient(90deg,#caa84a,#e9d07a,#caa84a); border-radius:2px;
+}
+
+/* CTAs mobile mais fortes e full-width */
+@media (max-width:480px){
+  .cta-group .btn{ width:100%; margin:6px 0; }
+  .btn-primary{ background:#7a1b1b!important; color:#fff!important; }
+  .btn-outline-gold{ background:transparent; border:2px solid #e1c85a; color:#7a1b1b; }
+}
+
+
+.femme-hero h1 {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 400 !important;  /* Mais leve */
+    letter-spacing: 0.02em !important;  /* Mais espaçada */
+}
+
+.femme-hero h1 {
+    font-size: 3rem !important;
+    line-height: 1.2 !important;
+}
+
+@media (max-width: 768px) {
+    /* Adjust peacock/florals for mobile if needed */
+    .femme-hero {
+        background-size: cover !important;
+    }
+}
+
+
+/* MAKE TEXT POP */
+.femme-hero .hero-content {
+   position: relative;
+   z-index: 2;
+}
+
+.femme-hero h1 {
+   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.femme-hero p {
+   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+   .femme-hero::before {
+       background: rgba(255,255,255,0.3);
+   }
+}
+
+
+/* CENTER AND SHRINK ALL HERO TEXT */
+.femme-hero {
+    text-align: center !important;
+    padding: 120px 20px 80px !important;
+}
+
+.femme-hero h1 {
+    color: #FFFFFF !important;  /* White to pop */
+    font-size: 2.8rem !important;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4) !important;
+    max-width: 800px !important;
+    margin: 0 auto 20px !important;
+}
+
+.femme-hero p {
+    font-size: 1.1rem !important;
+    max-width: 600px !important;
+    margin: 0 auto 30px !important;
+    color: #444 !important;
+}
+
+/* MOBILE ADJUSTMENTS */
+@media (max-width: 768px) {
+    .femme-hero h1 {
+        font-size: 2rem !important;
+    }
+    .femme-hero p {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* desloca só o H1 do hero para a direita em telas grandes */
+@media (min-width: 992px){
+  .femme-hero h1{ transform: translateX(36px); } /* ajuste fino: 16–22px */
+}
+
+
+/* sobe head, linha dourada, sub e microline */
+.femme-hero h1,
+.femme-hero .gold-line,
+.femme-hero .subheadline,
+.femme-hero .microline{
+  position: relative;
+  top: -60px; /* ~1cm visual em desktop */
+}
+
+@media (max-width:768px){
+  .femme-hero h1,
+  .femme-hero .gold-line,
+  .femme-hero .subheadline,
+  .femme-hero .microline{
+    top: -6px; /* menor ajuste no mobile */
+  }
+}
+
+.femme-hero .divisor {
+  position: relative;
+  top: -70px; /* ajuste conforme necessário */
+left: 30px;
+}
+
+
+
+
+/* CLEAN HERO REDESIGN */
+.femme-hero {
+    background: linear-gradient(135deg, #FFF8FC 0%, #FCF0F5 100%) !important;
+    padding: 140px 20px 100px !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* FLORAL FRAME OVERLAY */
+.femme-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('assets/images/hero-floral-frame.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 1;
+}
+
+/* CENTERED CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.femme-hero h1 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 3.2rem !important;
+    font-weight: 400 !important;
+    color: #FFF !important;
+    text-shadow: 2px 3px 5px rgba(122,45,68,0.3) !important;
+    margin-bottom: 25px !important;
+    line-height: 1.1 !important;
+}
+
+.femme-hero p {
+    font-size: 1.15rem !important;
+    line-height: 1.6 !important;
+    color: #5a3942 !important;
+    margin-bottom: 15px !important;
+}
+
+.femme-hero p:first-of-type {
+    font-weight: 600 !important;
+    color: #7a2d44 !important;
+}
+
+.femme-hero p:last-of-type {
+    font-style: italic !important;
+    margin-top: 20px !important;
+}
+
+/* BUTTONS */
+.cta-group {
+    margin-top: 40px !important;
+    gap: 20px !important;
+}
+
+@media (max-width: 768px) {
+    .femme-hero h1 {
+        font-size: 2.2rem !important;
+    }
+    .femme-hero p {
+        font-size: 1rem !important;
+    }
+}
+
+
+
+
+/* 3D HYPNOTIC CTA BUTTONS */
+.cta-group .btn {
+    background: linear-gradient(135deg, #FF1493, #FF69B4) !important;
+    box-shadow: 
+        0 10px 25px rgba(255,20,147,0.4),
+        inset 0 1px 0 rgba(255,255,255,0.4),
+        inset 0 -3px 0 rgba(0,0,0,0.2) !important;
+    transform: translateY(0) !important;
+    transition: all 0.3s !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.cta-group .btn:hover {
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: 
+        0 15px 35px rgba(255,20,147,0.5),
+        0 0 50px rgba(255,105,180,0.6) !important;
+}
+
+/* SHIMMER EFFECT ON HOVER */
+.cta-group .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s;
+}
+
+.cta-group .btn:hover::before {
+    left: 100%;
+}
+
+
