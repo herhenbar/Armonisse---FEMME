@@ -3557,32 +3557,64 @@ left: 30px;
 }
 
 
-/* MOBILE ONLY - HIDE FLORALS AND CENTER TEXT */
+/* 1. MOBILE FLORAL FIX - FORCE HIDE */
 @media (max-width: 768px) {
-    /* Hide peacock and flowers */
-    .femme-hero::before {
+    .femme-hero {
         background-image: none !important;
     }
-    
-    /* Adjust hero padding and center content */
-    .femme-hero {
-        padding: 100px 20px 80px !important;
-        background: linear-gradient(135deg, #FFE6F0 0%, #FFDDE8 100%) !important;
-    }
-    
-    .hero-content {
-        max-width: 100% !important;
-        padding: 0 10px !important;
-    }
-    
+}
+
+/* 2. MOBILE COLOR OPACITY FIX */
+@media (max-width: 768px) {
     .femme-hero h1 {
-        font-size: 2.2rem !important;
-        margin-bottom: 25px !important;
+        color: #FFFFFF !important;
+        opacity: 1 !important;
     }
-    
     .femme-hero p {
-        font-size: 1rem !important;
-        line-height: 1.6 !important;
-        margin-bottom: 15px !important;
+        color: #5a3942 !important;
+        opacity: 1 !important;
     }
+}
+
+/* 3. BENEFITS UNDERLINE FIX */
+.section-benefits .divisor {
+    margin-top: 10px !important;
+}
+
+/* 4. PRICE SIZE MATCH */
+.product-card:nth-child(1) .full-price,
+.product-card:nth-child(2) .full-price,
+.product-card:nth-child(3) .full-price {
+    font-size: 2.2rem !important;
+}
+
+/* 5. JEWEL CTA IMPROVEMENTS */
+.combo-hook h2 {
+    color: #FFD700 !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
+    font-size: 2rem !important;
+}
+
+.combo-headline {
+    background: linear-gradient(90deg, #FFD700, #FFA500) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 800 !important;
+    font-size: 1.3rem !important;
+}
+
+.combo-box div[style*="economiza"] {
+    background: #FF0000 !important;
+    color: white !important;
+    padding: 10px !important;
+    border-radius: 20px !important;
+    font-weight: 800 !important;
+    animation: pulse 2s infinite !important;
+}
+
+/* KILL COMBO SECTION ON ALL DEVICES */
+.combo-section-final,
+.combo-section,
+section[id*="combo"] {
+    display: none !important;
 }
