@@ -3537,10 +3537,7 @@ left: 30px;
         padding: 0 10px !important;
     }
     
-    /* KILL SHIMMER ON MOBILE */
-    .cta-group .btn::before {
-        display: none !important;
-    }
+ 
     
     /* SIMPLER MOBILE BUTTONS */
     .cta-group .btn {
@@ -3557,30 +3554,6 @@ left: 30px;
 }
 
 
-/* 1. MOBILE FLORAL FIX - FORCE HIDE */
-@media (max-width: 768px) {
-    .femme-hero {
-        background-image: none !important;
-    }
-}
-
-/* 2. MOBILE COLOR OPACITY FIX */
-@media (max-width: 768px) {
-    .femme-hero h1 {
-        color: #FFFFFF !important;
-        opacity: 1 !important;
-    }
-    .femme-hero p {
-        color: #5a3942 !important;
-        opacity: 1 !important;
-    }
-}
-
-/* 3. BENEFITS UNDERLINE FIX */
-.section-benefits .divisor {
-    margin-top: 10px !important;
-}
-
 /* 4. PRICE SIZE MATCH */
 .product-card:nth-child(1) .full-price,
 .product-card:nth-child(2) .full-price,
@@ -3588,33 +3561,61 @@ left: 30px;
     font-size: 2.2rem !important;
 }
 
-/* 5. JEWEL CTA IMPROVEMENTS */
-.combo-hook h2 {
-    color: #FFD700 !important;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3) !important;
-    font-size: 2rem !important;
+
+
+/* KEEP THE CTA BOX - DON'T DELETE */
+.combo-section-final {
+    display: block !important;
+}
+
+/* HIDE ONLY THE TIMER COMBO */
+#combos-final {
+    display: none !important;
+}
+
+/* FIX BENEFITS UNDERLINE */
+.section-benefits h2::after {
+    margin-top: 20px !important;
+}
+
+/* FIX ALL MUTED COLORS */
+.femme-hero h1 {
+    color: #FFFFFF !important;
+    opacity: 1 !important;
+}
+
+.femme-hero p {
+    color: #5a3942 !important;
+    opacity: 1 !important;
+    font-weight: 500 !important;
+}
+
+.femme-hero p:last-of-type {
+    color: #7a2d44 !important;
+    font-weight: 600 !important;
+    font-style: italic !important;
+}
+
+/* JEWEL CTA IMPROVEMENTS */
+.combo-hook p {
+    color: #d4af37 !important;
+    font-weight: 700 !important;
+    font-size: 1.2rem !important;
 }
 
 .combo-headline {
-    background: linear-gradient(90deg, #FFD700, #FFA500) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+    color: #d4af37 !important;
     font-weight: 800 !important;
-    font-size: 1.3rem !important;
 }
 
-.combo-box div[style*="economiza"] {
-    background: #FF0000 !important;
-    color: white !important;
-    padding: 10px !important;
-    border-radius: 20px !important;
+div:contains("economiza") {
+    color: #27ae60 !important;
     font-weight: 800 !important;
-    animation: pulse 2s infinite !important;
 }
 
-/* KILL COMBO SECTION ON ALL DEVICES */
-.combo-section-final,
-.combo-section,
-section[id*="combo"] {
-    display: none !important;
+/* MOBILE COLOR FIX */
+@media (max-width: 768px) {
+    .femme-hero * {
+        opacity: 1 !important;
+    }
 }
