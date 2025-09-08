@@ -3518,3 +3518,40 @@ left: 30px;
 }
 
 
+/* MOBILE HERO FIX */
+@media (max-width: 768px) {
+    .femme-hero {
+        padding: 80px 15px 60px !important;
+        min-height: 100vh !important;
+    }
+    
+    .femme-hero h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+        margin-bottom: 20px !important;
+    }
+    
+    .femme-hero p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        padding: 0 10px !important;
+    }
+    
+    /* KILL SHIMMER ON MOBILE */
+    .cta-group .btn::before {
+        display: none !important;
+    }
+    
+    /* SIMPLER MOBILE BUTTONS */
+    .cta-group .btn {
+        box-shadow: 0 4px 12px rgba(255,20,147,0.3) !important;
+        width: 100% !important;
+        max-width: 280px !important;
+    }
+    
+    /* STACK BUTTONS VERTICALLY */
+    .cta-group {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
