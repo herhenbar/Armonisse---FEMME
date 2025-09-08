@@ -3555,3 +3555,34 @@ left: 30px;
         align-items: center !important;
     }
 }
+
+
+/* MOBILE ONLY - HIDE FLORALS AND CENTER TEXT */
+@media (max-width: 768px) {
+    /* Hide peacock and flowers */
+    .femme-hero::before {
+        background-image: none !important;
+    }
+    
+    /* Adjust hero padding and center content */
+    .femme-hero {
+        padding: 100px 20px 80px !important;
+        background: linear-gradient(135deg, #FFE6F0 0%, #FFDDE8 100%) !important;
+    }
+    
+    .hero-content {
+        max-width: 100% !important;
+        padding: 0 10px !important;
+    }
+    
+    .femme-hero h1 {
+        font-size: 2.2rem !important;
+        margin-bottom: 25px !important;
+    }
+    
+    .femme-hero p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 15px !important;
+    }
+}
