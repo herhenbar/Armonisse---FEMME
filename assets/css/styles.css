@@ -930,7 +930,7 @@ body{
     }
     .section-subtitle{
         font-size:16px
-    }
+      }
 }
 .benefits-section{
     background-blend-mode:overlay;
@@ -3612,6 +3612,7 @@ div:contains("economiza") {
     color: #27ae60 !important;
     font-weight: 800 !important;
 }
+
 
 
 
