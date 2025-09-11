@@ -1,3 +1,4 @@
+
 .cta-group,.divisor,.femme-header,.femme-hero,.femme-hero h1,.femme-hero p,.femme-nav a,.fold2,.product-card:nth-child(4) .product-info,.product-card:nth-child(5) .product-info,.product-card:nth-child(6) .product-info,.products-container{
     position:relative
 }
@@ -766,107 +767,7 @@ body{
     font-weight:600;
     color:#c49a3a
 }
-.combo-section{
-    padding:40px 20px
-}
-.combo-cta,.combo-cta.rose{
-    font-size:1rem;
-    padding:16px 28px;
-    display:inline-block;
-    font-weight:700
-}
-.combo-cta{
-    background:linear-gradient(to right,#d4af37,#e3c670);
-    border-radius:14px;
-    color:#4a1e2d;
-    box-shadow:0 8px 20px rgba(0,0,0,.08)
-}
-.combo-cta:hover{
-    transform:translateY(-2px);
-    box-shadow:0 12px 24px rgba(0,0,0,.15)
-}
-.combo-wrapper{
-    background:url('assets/images/fundo-floral.png') center top/100% auto no-repeat #fff5f8
-}
-.combo-section{
-    background-color:#fff5f8;
-    padding-top:0;
-    padding-bottom:30px;
-    margin-top:-85px
-}
-.combo-hook{
-    padding-bottom:0
-}
-.combo-box{
-    background:#fceef2;
-    margin:0 auto;
-    box-shadow:0 8px 32px rgba(0,0,0,.04);
-    box-shadow:inset 0 0 0 transparent;
-    transition:box-shadow .3s
-}
-.combo-box:hover{
-    box-shadow:0 0 24px rgba(180,83,120,.12)
-}
-.combo-hook h2{
-    letter-spacing:-.25px;
-    font-size:1.65rem;
-    font-weight:700;
-    color:#7a2d44;
-    text-shadow:0 1px 1px #ffe6f0;
-    margin:0;
-    letter-spacing:-.3px
-}
-.combo-icon,.combo-value s{
-    margin-right:6px
-}
-.combo-wrapper{
-    background-color:#fff5f8;
-    padding-top:0;
-    padding-bottom:80px;
-    display:flex;
-    flex-direction:column;
-    align-items:center
-}
-.combo-hook{
-    margin-top:-5px;
-    margin-bottom:24px
-}
-.combo-box{
-    background:linear-gradient(to bottom,#fdf4f7,#fceef2);
-    border:1px solid #f5c7d8;
-    padding:48px 36px 44px;
-    border-radius:22px;
-    max-width:720px;
-    box-shadow:0 0 14px rgba(180,83,120,.08)
-}
-.combo-headline{
-    font-size:1.08rem;
-    color:#4a1e2d;
-    line-height:1.6;
-    margin-bottom:22px
-}
-.combo-title{
-    color:#d4af37;
-    font-weight:700;
-    margin-right:4px
-}
-.combo-value{
-    display:block;
-    margin-top:8px;
-    font-size:1.2rem;
-    color:#7a2d44
-}
-.combo-value s{
-    color:#bba1a8
-}
-.combo-subline{
-    opacity:.8;
-    font-size:1.02rem;
-    color:#7a2d44;
-    opacity:.95;
-    margin:16px auto 24px;
-    max-width:620px
-}
+
 .discount-highlight{
     font-weight:700;
     font-size:1.05rem;
@@ -1863,51 +1764,12 @@ a.btn-outline[href="#produtos"]{
     border-left:3px solid #d4af37!important;
     flex:0 0 290px
 }
-.combo-1 .combo-price-box::after{
-    content:'29.5 % OFF'
-}
-.combo-2 .combo-price-box::after{
-    content:'35.9 % OFF'
-}
-.combo-3 .combo-price-box::after{
-    content:'57.4 % OFF'
-}
-.combos-wrapper{
-    gap:20px!important
-}
-.combos-wrapper .combo-card:first-child{
-    padding-top:60px!important
-}
-.combo-card{
-    flex-direction:column!important;
-    justify-content:space-evenly!important;
-    min-height:480px!important
-}
-.combo-list{
-    flex-grow:1!important;
-    flex-direction:column!important;
-    justify-content:space-around!important
+ justify-content:space-around!important
 }
 .mini-desc{
     font-size:11px
 }
-.combo-1 .combo-list{
-    margin-top:-58px!important
-}
-.combo-1 .combo-list li:nth-child(2){
-    transform:translateY(-110px)!important
-}
-.combo-list li{
-    background:linear-gradient(135deg,rgba(212,175,55,.15),rgba(212,175,55,.05))!important;
-    border:1px solid rgba(212,175,55,.3)!important;
-    border-radius:8px!important;
-    padding:12px 8px!important;
-    margin-bottom:10px!important
-}
-.combo-list li:nth-child(n+3){
-    background:linear-gradient(135deg,rgba(255,140,0,.15),rgba(255,140,0,.05))!important;
-    border:1px solid rgba(255,140,0,.3)!important
-}
+
 .carousel-btn.prev,.nav-left{
     left:10px
 }
@@ -2337,11 +2199,11 @@ html{
         font-family:'Playfair Display',serif!important;
         text-align:center!important
     }
-    .section-benefits{
-        padding:50px 15px!important
-    }
+   .section-benefits{
+    padding:-20px 15px!important
+}
     .section-benefits .title{
-        margin-bottom:40px!important
+        margin-bottom:5px!important
     }
     .section-benefits .title div[style*="display:flex"]{
         display:flex!important;
@@ -3614,6 +3476,21 @@ div:contains("economiza") {
 }
 
 
+.section-benefits * {
+    border-bottom: none !important;
+}
+
+
+.section-benefits .title::after,
+.section-benefits .title::before {
+    display: none !important;
+}
+
+.section-subtitle {
+    text-align: center !important;
+    margin: 10px auto 0 auto !important;
+    max-width: 600px !important;
+}
 
 
 
