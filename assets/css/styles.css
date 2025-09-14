@@ -3929,4 +3929,51 @@ color: #5a3942 !important;
     box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
+@media (max-width: 768px) {
+    .hero-content {
+        background: transparent !important;
+        padding: 20px 10px !important;
+        border-radius: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    .femme-hero {
+        background: linear-gradient(135deg, #fff8fc 0%, #f9d7e2 100%) !important;
+        padding: 60px 15px 50px !important;
+    }
+}
 
+@media (max-width: 768px) {
+    .section-benefits {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        background: linear-gradient(to bottom, #fff 0%, #f9d7e2 3%, #b4ccd4 10%, #a1bec9 35%, #8db3c1 100%) !important;
+        padding: 60px 15px !important;
+        margin-top: 0 !important;
+        position: relative !important;
+        z-index: 100 !important;
+    }
+    
+    .benefits-container,
+    .benefit-head,
+    .section-subtitle,
+    .benefits-grid {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .benefits-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    
+    .benefit-card {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
