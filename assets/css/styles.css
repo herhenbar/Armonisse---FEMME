@@ -3978,25 +3978,29 @@ color: #5a3942 !important;
     }
 }
 
+/* CONSERTOS  dom - 14 9 25 - 14:36 OPUS */
+
 @media (max-width: 768px) {
-    /* Fix crushed benefits section on mobile */
-    #beneficios,
-    .section-benefits {
-        min-height: auto !important;
-        height: auto !important;
-        padding: 40px 15px !important;
-    }
-    
-    /* Ensure benefits header image shows properly */
-    .benefit-head {
-        min-height: 150px !important;
+    /* Force benefit cards to show on mobile */
+    .combo-section-final,
+    .section-benefits .row,
+    .section-benefits .col-md-4 {
         display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        height: auto !important;
+        min-height: auto !important;
     }
     
-    /* Fix the benefits content area */
-    .section-benefits .container,
-    .section-benefits > div {
-        min-height: auto !important;
+    /* Stack cards vertically on mobile */
+    .section-benefits .col-md-4 {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+    
+    /* Ensure the section has height */
+    #beneficios {
+        min-height: 600px !important;
         height: auto !important;
     }
 }
