@@ -3977,3 +3977,26 @@ color: #5a3942 !important;
         opacity: 1 !important;
     }
 }
+
+@media (max-width: 768px) {
+    /* Fix crushed benefits section on mobile */
+    #beneficios,
+    .section-benefits {
+        min-height: auto !important;
+        height: auto !important;
+        padding: 40px 15px !important;
+    }
+    
+    /* Ensure benefits header image shows properly */
+    .benefit-head {
+        min-height: 150px !important;
+        display: block !important;
+    }
+    
+    /* Fix the benefits content area */
+    .section-benefits .container,
+    .section-benefits > div {
+        min-height: auto !important;
+        height: auto !important;
+    }
+}
