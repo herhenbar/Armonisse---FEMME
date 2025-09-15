@@ -4313,59 +4313,6 @@ color: #5a3942 !important;
     }
 }
 
-/* NAV FIX - FORCE FIT ALL 4 WORDS */
-@media (max-width: 768px) {
-    .femme-header {
-        padding: 5px 0 !important;
-    }
-    
-    .header-flex {
-        padding: 0 5px !important;
-    }
-    
-    .femme-nav {
-        flex: 1 !important;
-    }
-    
-    .femme-nav ul {
-        display: flex !important;
-        justify-content: flex-end !important;
-        gap: 2px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-    
-    .femme-nav ul li a {
-        font-size: 0.6rem !important;
-        padding: 2px 4px !important;
-        letter-spacing: -0.3px !important;
-        white-space: nowrap !important;
-    }
-    
-    /* Special handling for CONTATO */
-    .femme-nav ul li:last-child a {
-        padding-right: 8px !important;
-    }
-}
-
-/* BENEFITS HEAD & SUB - STRONG COLORS */
-@media (max-width: 768px) {
-    /* Your PNG header - make it pop */
-    .benefit-head img {
-        filter: brightness(1.1) contrast(1.3) saturate(1.4) !important;
-        opacity: 1 !important;
-    }
-    
-    /* Subtitle - STRONG COLOR */
-    .section-benefits .section-subtitle {
-        color: #5a2838 !important;
-        font-weight: 700 !important;
-        font-size: 1.05rem !important;
-        text-shadow: 0 1px 3px rgba(255,255,255,0.8) !important;
-        opacity: 1 !important;
-        filter: contrast(1.5) !important;
-    }
-}
 
 /* REDUCE WHITE SPACE BELOW CTA */
 @media (max-width: 768px) {
@@ -4377,3 +4324,4 @@ color: #5a3942 !important;
         margin-bottom: 5px !important;
     }
 }
+
