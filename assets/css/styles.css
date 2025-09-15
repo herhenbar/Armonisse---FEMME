@@ -4102,5 +4102,109 @@ color: #5a3942 !important;
     }
 }
 
+/* REMOVE GOLDEN ARROWS FROM BENEFITS */
+@media (max-width: 768px) {
+    .carousel-btn.prev,
+    .carousel-btn.next,
+    .carousel-btn {
+        display: none !important;
+    }
+    
+    /* Add swipe indicator instead */
+    .carousel-container::after {
+        content: "← → ";
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        color: #d4af37;
+        margin-top: 15px;
+        opacity: 0.6;
+    }
+}
+
+/* FIX HERO - HIDE LEFT FLORAL, KEEP RIGHT */
+@media (max-width: 768px) {
+    .femme-hero {
+        background: linear-gradient(135deg, #FFF8FC 0%, #FCF0F5 100%) !important;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Add floral frame as pseudo-element - RIGHT SIDE ONLY */
+    .femme-hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -20%;
+        width: 70%;
+        height: 100%;
+        background: url('assets/images/fold1-floral-frame.png') no-repeat right center;
+        background-size: contain;
+        opacity: 0.8;
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    /* Shift content to left */
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: left !important;
+        padding-left: 20px !important;
+        padding-right: 40% !important;
+        max-width: 100% !important;
+    }
+    
+    .femme-hero h1 {
+        text-align: left !important;
+        margin-left: 0 !important;
+    }
+    
+    .femme-hero .divisor {
+        margin: 15px 0 !important;
+        margin-left: 0 !important;
+    }
+    
+    .femme-hero p {
+        text-align: left !important;
+    }
+    
+    /* CTAs aligned left */
+    .cta-group {
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+    }
+}
+
+/* FIX BENEFITS HEADER & SUBTITLE */
+@media (max-width: 768px) {
+    /* Fix header image positioning */
+    .benefit-head {
+        text-align: center !important;
+        margin: 0 auto 20px !important;
+        padding: 0 10px !important;
+    }
+    
+    .benefit-head img {
+        width: 90% !important;
+        max-width: 350px !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Fix subtitle */
+    .section-benefits .section-subtitle {
+        font-size: 1rem !important;
+        line-height: 1.4 !important;
+        color: #7a2d44 !important;
+        text-align: center !important;
+        padding: 0 20px !important;
+        margin: 0 auto 30px !important;
+        display: block !important;
+        font-style: italic !important;
+        max-width: 90% !important;
+    }
+}
 
 
