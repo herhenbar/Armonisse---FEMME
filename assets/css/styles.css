@@ -4327,76 +4327,69 @@ color: #5a3942 !important;
 
 
 /* alteração chat gpt plus 16/9/25-ter-22:17 fixing hero on mobile */
-/* --- MOBILE HERO FIX: left florals off, text left, right florals on --- */
+/* --- HERO MOBILE LAYOUT FIX --- */
 @media (max-width: 768px) {
-  /* Base hero container */
-  .femme-hero{
-    position: relative !important;
-    overflow: hidden !important;
-    padding: 130px 20px 60px !important;
-    background: linear-gradient(135deg,#FFF8FC 0%, #FCF0F5 100%) !important; /* keep your base */
-  }
-
-  /* Kill the white card */
-  .femme-hero .hero-content{
-    background: transparent !important;
+  /* Kill the white card look */
+  .femme-hero .hero-content {
+    background: none !important;
     box-shadow: none !important;
     border: 0 !important;
     padding: 0 !important;
-    max-width: 560px !important;
-    margin: 36px 0 0 !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
     text-align: left !important;
+    position: relative !important;
+    z-index: 2 !important;
   }
 
-  /* Hide ONLY the left floral layer (your full-frame overlay) */
-  .femme-hero::before{
-    display: none !important;           /* removes the left florals that live in ::before */
-    background: none !important;
-    content: '' !important;
+  /* Remove ONLY left florals */
+  .femme-hero .floral-left,
+  .femme-hero::before {
+    display: none !important;
   }
 
-  /* Keep and pin the RIGHT florals */
-  .femme-hero::after{
-    content: '' !important;
+  /* Keep the right florals pinned */
+  .femme-hero .floral-right,
+  .femme-hero::after {
     display: block !important;
     position: absolute !important;
+    right: 0 !important;
     top: 0 !important;
     bottom: 0 !important;
-    left: auto !important;
-    right: -8% !important;
-    width: 68% !important;
-    background: url('assets/images/fold1-floral-frame.png') no-repeat right center !important;
+    width: 60% !important;
+    background-position: right center !important;
+    background-repeat: no-repeat !important;
     background-size: contain !important;
-    opacity: .9 !important;
-    pointer-events: none !important;
     z-index: 1 !important;
   }
 
-  /* Typography & spacing to mimic your print #2 */
-  .femme-hero h1{
-    font-size: clamp(28px, 6vw, 36px) !important;
-    line-height: 1.15 !important;
-    color: #7a2d44 !important;
-    text-shadow: none !important;
-    text-align: left !important;
-    margin: 0 0 12px !important;
+  /* Text refinements */
+  .femme-hero h1 {
+    font-size: clamp(26px, 6vw, 34px) !important;
+    line-height: 1.2 !important;
+    color: #6d1f38 !important;
+    margin-bottom: 12px !important;
   }
-  .femme-hero p{
-    font-size: clamp(16px, 4.2vw, 18px) !important;
+  .femme-hero p {
+    font-size: clamp(15px, 4.2vw, 18px) !important;
     line-height: 1.45 !important;
-    color: #7a2d44 !important;
-    text-align: left !important;
-    margin: 8px 0 !important;
+    color: #6d1f38 !important;
+    margin-bottom: 12px !important;
   }
-  .femme-hero .divisor{ margin: 10px 0 !important; }
 
-  /* CTAs left, stacked tight */
-  .femme-hero .cta-group{
+  /* Buttons left aligned, stacked */
+  .femme-hero .cta-group {
     justify-content: flex-start !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
     gap: 12px !important;
   }
-  .femme-hero .btn{ width: auto !important; }
+  .femme-hero .btn {
+    width: auto !important;
+  }
 }
+
+
 
 
 
