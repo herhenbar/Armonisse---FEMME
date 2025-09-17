@@ -4326,7 +4326,79 @@ color: #5a3942 !important;
 }
 
 
-/* alteração opus 16/9/25-ter-21:57 */
+/* alteração chat gpt plus 16/9/25-ter-22:17 fixing hero on mobile */
+/* --- MOBILE HERO FIX: left florals off, text left, right florals on --- */
+@media (max-width: 768px) {
+  /* Base hero container */
+  .femme-hero{
+    position: relative !important;
+    overflow: hidden !important;
+    padding: 130px 20px 60px !important;
+    background: linear-gradient(135deg,#FFF8FC 0%, #FCF0F5 100%) !important; /* keep your base */
+  }
+
+  /* Kill the white card */
+  .femme-hero .hero-content{
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+    max-width: 560px !important;
+    margin: 36px 0 0 !important;
+    text-align: left !important;
+  }
+
+  /* Hide ONLY the left floral layer (your full-frame overlay) */
+  .femme-hero::before{
+    display: none !important;           /* removes the left florals that live in ::before */
+    background: none !important;
+    content: '' !important;
+  }
+
+  /* Keep and pin the RIGHT florals */
+  .femme-hero::after{
+    content: '' !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    right: -8% !important;
+    width: 68% !important;
+    background: url('assets/images/fold1-floral-frame.png') no-repeat right center !important;
+    background-size: contain !important;
+    opacity: .9 !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+  }
+
+  /* Typography & spacing to mimic your print #2 */
+  .femme-hero h1{
+    font-size: clamp(28px, 6vw, 36px) !important;
+    line-height: 1.15 !important;
+    color: #7a2d44 !important;
+    text-shadow: none !important;
+    text-align: left !important;
+    margin: 0 0 12px !important;
+  }
+  .femme-hero p{
+    font-size: clamp(16px, 4.2vw, 18px) !important;
+    line-height: 1.45 !important;
+    color: #7a2d44 !important;
+    text-align: left !important;
+    margin: 8px 0 !important;
+  }
+  .femme-hero .divisor{ margin: 10px 0 !important; }
+
+  /* CTAs left, stacked tight */
+  .femme-hero .cta-group{
+    justify-content: flex-start !important;
+    gap: 12px !important;
+  }
+  .femme-hero .btn{ width: auto !important; }
+}
+
+
 
 
 
