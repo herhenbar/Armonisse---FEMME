@@ -4327,65 +4327,91 @@ color: #5a3942 !important;
 
 
 /* alteração chat gpt plus 16/9/25-ter-22:17 fixing hero on mobile */
-/* --- HERO MOBILE LAYOUT FIX --- */
+
+
+/* HERO TWO-COLUMN LAYOUT */
+.femme-hero {
+  padding: 80px 20px;
+  background: linear-gradient(135deg,#FFF8FC 0%, #FCF0F5 100%);
+}
+.femme-hero .hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.femme-hero .hero-text {
+  flex: 1;
+  max-width: 520px;
+  z-index: 2;
+}
+.femme-hero .hero-text h1 {
+  font-size: clamp(28px, 6vw, 42px);
+  line-height: 1.2;
+  color: #6d1f38;
+  margin-bottom: 16px;
+}
+.femme-hero .hero-text p {
+  font-size: clamp(16px, 4vw, 20px);
+  line-height: 1.5;
+  color: #6d1f38;
+  margin-bottom: 12px;
+}
+.femme-hero .hero-text .tagline {
+  font-style: italic;
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+.femme-hero .cta-group {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+}
+.femme-hero .btn {
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.femme-hero .btn-primary {
+  background: linear-gradient(90deg,#ff2a7f,#ff6bb5);
+  color: #fff;
+}
+.femme-hero .btn-primary:hover { opacity: 0.85; }
+.femme-hero .btn-outline {
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  background: transparent;
+}
+.femme-hero .btn-outline:hover {
+  background: #d4af37;
+  color: #fff;
+}
+
+/* RIGHT SIDE */
+.femme-hero .hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.femme-hero .hero-visual img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* MOBILE: stack text left, image below */
 @media (max-width: 768px) {
-  /* Kill the white card look */
-  .femme-hero .hero-content {
-    background: none !important;
-    box-shadow: none !important;
-    border: 0 !important;
-    padding: 0 !important;
-    max-width: 90% !important;
-    margin: 0 auto !important;
-    text-align: left !important;
-    position: relative !important;
-    z-index: 2 !important;
+  .femme-hero .hero-inner {
+    flex-direction: column;
+    text-align: left;
   }
-
-  /* Remove ONLY left florals */
-  .femme-hero .floral-left,
-  .femme-hero::before {
-    display: none !important;
-  }
-
-  /* Keep the right florals pinned */
-  .femme-hero .floral-right,
-  .femme-hero::after {
-    display: block !important;
-    position: absolute !important;
-    right: 0 !important;
-    top: 0 !important;
-    bottom: 0 !important;
-    width: 60% !important;
-    background-position: right center !important;
-    background-repeat: no-repeat !important;
-    background-size: contain !important;
-    z-index: 1 !important;
-  }
-
-  /* Text refinements */
-  .femme-hero h1 {
-    font-size: clamp(26px, 6vw, 34px) !important;
-    line-height: 1.2 !important;
-    color: #6d1f38 !important;
-    margin-bottom: 12px !important;
-  }
-  .femme-hero p {
-    font-size: clamp(15px, 4.2vw, 18px) !important;
-    line-height: 1.45 !important;
-    color: #6d1f38 !important;
-    margin-bottom: 12px !important;
-  }
-
-  /* Buttons left aligned, stacked */
-  .femme-hero .cta-group {
-    justify-content: flex-start !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 12px !important;
-  }
-  .femme-hero .btn {
-    width: auto !important;
+  .femme-hero .hero-visual {
+    margin-top: 24px;
+    justify-content: flex-end;
   }
 }
 
