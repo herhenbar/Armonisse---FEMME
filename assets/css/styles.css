@@ -4325,3 +4325,53 @@ color: #5a3942 !important;
     }
 }
 
+
+/* HERO MOBILE - USE YOUR EXISTING FLORAL FRAME */
+@media (max-width: 768px) {
+    /* Keep YOUR floral frame visible */
+    .femme-hero {
+        background-image: url('assets/images/fold1-floral-frame.png') !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        padding: 80px 15px 60px !important;
+    }
+    
+    /* Make white card smaller and positioned to show more florals */
+    .hero-content {
+        background: rgba(255, 255, 255, 0.92) !important;
+        border-radius: 20px !important;
+        padding: 25px 20px 20px !important;
+        margin: 50px auto 0 !important;
+        max-width: 85% !important;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Keep YOUR text centered */
+    .femme-hero h1,
+    .femme-hero .subheadline,
+    .femme-hero .microline {
+        text-align: center !important;
+    }
+    
+    /* Compact spacing */
+    .femme-hero h1 {
+        font-size: 1.9rem !important;
+        margin-bottom: 12px !important;
+    }
+    
+    .femme-hero .subheadline {
+        margin-bottom: 8px !important;
+    }
+    
+    .femme-hero .microline {
+        margin-bottom: 20px !important;
+    }
+    
+    /* Your CTAs */
+    .cta-group {
+        justify-content: center !important;
+        gap: 10px !important;
+        margin-top: 15px !important;
+    }
+}
