@@ -4326,7 +4326,7 @@ color: #5a3942 !important;
 }
 
 
-/* alteração sonnet plus 20/9/25-sab- 14:52 fixing head benefit on mobile */
+/* alteração sonnet  20/9/25-sab- 14:52 fixing head benefit on mobile */
    
 @media (max-width: 768px) {
     .benefit-head img[src*="floral-head-benefit"] {
@@ -4345,9 +4345,44 @@ color: #5a3942 !important;
     }
 }
 
+/* alteração sonnet  20/9/25-sab- 17:18 fixing nav link bar on mobile only */
+/* REMOVE NAVEGAÇÃO NO MOBILE */
+@media (max-width: 768px) {
+    .femme-nav {
+        display: none !important;
+    }
+    
+    /* Header centralizado sem navegação */
+    .header-flex {
+        justify-content: center !important;
+        padding: 8px 0 !important;
+    }
+    
+    .logo-solo {
+        margin: 0 auto !important;
+    }
+}
 
 
+/* BARRA DE ESCASSEZ MOBILE */
+@media (max-width: 768px) {
+    .mobile-scarcity {
+        background: linear-gradient(135deg, #7a2d44, #a94463) !important;
+        color: #fff !important;
+        text-align: center !important;
+        padding: 10px !important;
+        font-weight: 700 !important;
+        font-size: 0.9rem !important;
+        border-bottom: 2px solid #d4af37 !important;
+        box-shadow: 0 2px 8px rgba(122, 45, 68, 0.3) !important;
+        animation: pulse 3s infinite !important;
+    }
+}
 
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
 
 
 
