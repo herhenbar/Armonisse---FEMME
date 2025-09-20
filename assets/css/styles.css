@@ -4326,9 +4326,26 @@ color: #5a3942 !important;
 }
 
 
-/* alteração chat gpt plus 16/9/25-ter-22:17 fixing hero on mobile */
+/* alteração sonnet plus 20/9/25-sab- 14:52 fixing head benefit on mobile */
 
 
+/* MOBILE: Hide PNG, show CSS header */
+@media (max-width: 768px) {
+    .benefit-head img {
+        display: none;
+    }
+    
+    .benefit-head::after {
+        content: "🌸 Benefícios Exclusivos 🌸";
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-size: 2rem;
+        color: #7a2d44;
+        text-align: center;
+        font-weight: 600;
+        margin: 20px 0;
+    }
+}
 
 
 
