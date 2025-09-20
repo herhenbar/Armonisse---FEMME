@@ -2485,8 +2485,24 @@ setInterval(() => {
 
 
 
+/* fix opus sat 17:44 at 20/09/25 - navlink bar scarcity clock */
 
-
+<div id="mobile-timer" style="display:none;"></div>
+<script>
+if(window.innerWidth <= 768) {
+  document.getElementById('mobile-timer').style.display = 'block';
+  setInterval(() => {
+    let now = new Date();
+    let midnight = new Date();
+    midnight.setHours(24,0,0,0);
+    let diff = midnight - now;
+    let h = Math.floor(diff/3600000);
+    let m = Math.floor((diff%3600000)/60000);
+    let s = Math.floor((diff%60000)/1000);
+    document.getElementById('mobile-timer').innerHTML = `OFERTA TERMINA EM: ${h.toString().padStart(2,'0')}:${m.toString().padStart(2,'0')}:${s.toString().padStart(2,'0')}`;
+  }, 1000);
+}
+</script>
 
 
 
