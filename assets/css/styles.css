@@ -4373,6 +4373,34 @@ color: #5a3942 !important;
   }
 }
 
+@media (max-width: 768px) {
+  nav, .nav-links, .navbar, .logo, header {
+    display: none !important;
+  }
+  
+  body {
+    padding-top: 45px;
+  }
+  
+  #mobile-timer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #d4af37, #212175);
+    color: white;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+    z-index: 9999;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+}
 
 
 
