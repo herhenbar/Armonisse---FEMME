@@ -4467,13 +4467,179 @@ section.femme-hero .divisor {
 }
 
 
-/* ======== FIX FLIP MOBILE (mantém clique desktop) ======== */
 
 
-
+/* HERO MOBILE - REDESIGN TOTAL */
+@media (max-width: 768px) {
+    .femme-hero {
+        padding: 40px 15px 60px !important;
+        background: linear-gradient(135deg, #fff8fc 0%, #f9d7e2 100%) !important;
+        min-height: auto !important;
+        position: relative !important;
+    }
     
+    /* MATA AS BORBOLETAS NO MOBILE */
+    .borboletas {
+        display: none !important;
+    }
+    
+    /* REPOSICIONA TODO O CONTEÚDO */
+    .hero-content {
+        position: relative !important;
+        z-index: 10 !important;
+        background: rgba(255,255,255,0.9) !important;
+        padding: 30px 20px !important;
+        border-radius: 20px !important;
+        margin: 20px auto !important;
+        max-width: 90% !important;
+    }
+    
+    /* FIX HEAD COLOR TO BURGUNDY ON MOBILE */
+    .femme-hero h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 15px !important;
+        color: #7a2d44 !important;
+        text-shadow: none !important;
+    }
 
 
 
 
 
+
+/* FIX FLIP CARDS ON MOBILE */
+@media (max-width: 768px) {
+  .flip-container {
+    width: 250px !important;
+    height: 350px !important;
+    margin: 0 auto !important;
+  }
+  
+  .flip-card {
+    height: 350px !important;
+  }
+  
+  .flip-front img, .flip-back img {
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: contain !important;
+  }
+}
+
+
+
+/* FIX COMBO CTA ON MOBILE */
+@media (max-width: 768px) {
+  .combo-section-final .combo-cta {
+    display: block !important;
+    width: 90% !important;
+    max-width: 300px !important;
+    margin: 20px auto !important;
+    padding: 16px 10px !important;
+    font-size: 0.9rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+  }
+  
+  .combo-box {
+    padding: 30px 15px !important;
+  }
+}
+
+
+
+/* REMOVE SHIMMER EFFECT ON MOBILE ONLY */
+@media (max-width: 768px) {
+  .product-card::after,
+  .product-card::before,
+  .btn::after,
+  .btn::before,
+  .combo-cta::before,
+  .combo-cta.rose::before {
+    display: none !important;
+    content: none !important;
+    animation: none !important;
+  }
+  
+  .product-card:hover::after {
+    display: none !important;
+  }
+}
+
+/* FIX CTA GARANTIA MOBILE */
+@media (max-width: 768px) {
+  .garantia-final-cta .btn {
+    display: block !important;
+    width: 90% !important;
+    max-width: 300px !important;
+    margin: 20px auto !important;
+    padding: 16px 10px !important;
+    font-size: 0.9rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    height: auto !important;
+  }
+  
+  .garantia-final-cta {
+    padding: 30px 15px !important;
+  }
+}
+
+
+/* FIX FLIP CARDS MOBILE - COLOQUE NO FINAL DO STYLES.CSS */
+.flip-container {
+  position: relative !important;
+  display: block !important;
+}
+
+.flip-container.flipped .flip-card {
+  transform: rotateY(180deg) !important;
+  -webkit-transform: rotateY(180deg) !important;
+}
+
+.flip-card {
+  position: relative !important;
+  transform-style: preserve-3d !important;
+  -webkit-transform-style: preserve-3d !important;
+}
+
+.flip-front, .flip-back {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  backface-visibility: hidden !important;
+  -webkit-backface-visibility: hidden !important;
+}
+
+.flip-back {
+  transform: rotateY(180deg) !important;
+  -webkit-transform: rotateY(180deg) !important;
+}
+
+@media (max-width: 768px) {
+  .flip-container {
+    width: 250px !important;
+    height: 350px !important;
+    margin: 0 auto !important;
+    perspective: 1000px !important;
+    -webkit-perspective: 1000px !important;
+  }
+  
+  .flip-card {
+    height: 350px !important;
+    width: 100% !important;
+    transition: transform 0.6s !important;
+    -webkit-transition: -webkit-transform 0.6s !important;
+  }
+  
+  .flip-front {
+    z-index: 2 !important;
+  }
+}
