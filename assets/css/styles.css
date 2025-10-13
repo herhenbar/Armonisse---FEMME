@@ -4467,77 +4467,39 @@ section.femme-hero .divisor {
 }
 
 
-/* alteração gpt mobile reconhecer flip + ctas - 12 10 25 - 23:40- dom */
-    /* ======= AJUSTES MOBILE ======= */
+/* ======== FIX FLIP MOBILE (mantém clique desktop) ======== */
 @media (max-width: 768px) {
+  .ebook-flip {
+    position: relative;
+    perspective: 1000px;
+  }
 
-  /* 1. Corrige o flip mostrando verso só no clique */
+  .ebook-flip .front,
   .ebook-flip .back {
-    display: none;
-  }
-  .ebook-flip.active .back {
-    display: block;
-  }
-
-  /* 2. Botões (CTAs) reduzem tamanho e padding */
-  .combo-cta, .garantia-cta {
-    font-size: 1rem !important;
-    padding: 14px 24px !important;
-    white-space: normal !important;
-    line-height: 1.3em !important;
+    width: 100%;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
-  /* 3. Corrige contraste do título branco */
-  .fold1 .hero-title, 
-  .chega-de-sofrer {
-    text-shadow: 0 0 8px rgba(0,0,0,0.4);
-    color: #fff;
-  }
-}
-
-
-
-/* ======= FLIP MOBILE ======= */
-.ebook-flip {
-  position: relative;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.ebook-flip img {
-  width: 100%;
-  display: block;
-  backface-visibility: hidden;
-  transition: transform 0.6s ease;
-  border-radius: 8px;
-}
-
-.ebook-flip .back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: rotateY(180deg);
-}
-
-.ebook-flip.active img.front {
-  transform: rotateY(180deg);
-}
-
-.ebook-flip.active .back {
-  transform: rotateY(0deg);
-}
-
-/* MOBILE fix */
-@media (max-width: 768px) {
   .ebook-flip .back {
-    display: none;
+    transform: rotateY(180deg);
   }
+
+  .ebook-flip.active .front {
+    transform: rotateY(180deg);
+  }
+
   .ebook-flip.active .back {
-    display: block;
+    transform: rotateY(0deg);
   }
 }
+
 
 
     
+
 
 
