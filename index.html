@@ -2619,12 +2619,14 @@ if(window.innerWidth <= 768) {
 
 
 <script>
-document.querySelectorAll('.ebook-flip').forEach(el => {
-  el.addEventListener('click', () => {
-    el.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.flip-container').forEach(c => {
+    c.addEventListener('click', () => c.classList.toggle('flipped'));
   });
 });
 </script>
+
+
 
 
 
