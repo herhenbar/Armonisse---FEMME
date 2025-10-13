@@ -4496,3 +4496,48 @@ section.femme-hero .divisor {
 }
 
 
+
+/* ======= FLIP MOBILE ======= */
+.ebook-flip {
+  position: relative;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.ebook-flip img {
+  width: 100%;
+  display: block;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease;
+  border-radius: 8px;
+}
+
+.ebook-flip .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+.ebook-flip.active img.front {
+  transform: rotateY(180deg);
+}
+
+.ebook-flip.active .back {
+  transform: rotateY(0deg);
+}
+
+/* MOBILE fix */
+@media (max-width: 768px) {
+  .ebook-flip .back {
+    display: none;
+  }
+  .ebook-flip.active .back {
+    display: block;
+  }
+}
+
+
+    
+
+
