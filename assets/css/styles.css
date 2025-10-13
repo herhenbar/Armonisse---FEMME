@@ -1,4 +1,5 @@
 
+
 .cta-group,.divisor,.femme-header,.femme-hero,.femme-hero h1,.femme-hero p,.femme-nav a,.fold2,.product-card:nth-child(4) .product-info,.product-card:nth-child(5) .product-info,.product-card:nth-child(6) .product-info,.products-container{
     position:relative
 }
@@ -3682,11 +3683,14 @@ div:contains("economiza") {
     }
     
     .femme-hero .subheadline {
-        font-size: 1rem !important;
-        line-height: 1.4 !important;
-        margin-bottom: 10px !important;
-        color: #5a3942 !important;
-    }
+  font-size: 1rem !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0px !important;
+  color: #5a3942 !important;
+  text-align: center !important;
+}
+
+
     
     .femme-hero .microline {
         font-size: 0.9rem !important;
@@ -4403,9 +4407,64 @@ color: #5a3942 !important;
 }
 
 
+@media (max-width: 768px) {
+    .femme-hero h1 { 
+        color: red !important; 
+        font-size: 50px !important; 
+    }
+}
 
 
 
+
+
+/* PATCH CRÍTICO – NORMALIZA E SOBREESCREVE */
+.femme-hero, .product-card, .btn, .price, .card-title, .subhead-destaque { all: revert-layer; }
+
+/* classes com ponto e valores válidos */
+.femme-hero { padding: 120px 20px 80px !important; text-align:center !important; }
+.femme-hero h1 { font-family:'Playfair Display',serif !important; font-size:3rem !important; color:#fff !important; text-shadow:3px 3px 6px rgba(0,0,0,.4) !important; }
+.femme-hero p { font-size:1.1rem !important; color:#5a3942 !important; }
+.cta-group .btn { padding:16px 28px !important; border-radius:30px !important; }
+
+.product-card { display:flex !important; flex-direction:column !important; width:250px !important; background:#fff !important; }
+.product-img { height:360px !important; display:flex !important; align-items:center !important; justify-content:center !important; }
+.product-img img { height:94% !important; width:auto !important; object-fit:contain !important; border-radius:12px !important; }
+
+.card-title { color:#7a2d44 !important; }
+.subhead-destaque { color:#7a2d44 !important; font-weight:600 !important; font-size:1rem !important; font-family:'Playfair Display',serif !important; }
+
+/* mobile */
+@media (max-width:768px){
+  .femme-hero h1{ font-size:2rem !important; }
+  .femme-hero p{ font-size:.95rem !important; }
+}
+
+
+
+/* alteração sonnet centralizar sub da hero- 30-9-25 - 20:12-ter */
+
+.femme-hero .subheadline {
+  text-align: center !important;
+  font-size: 1.1rem !important;
+}
+
+.femme-hero .microline {
+  text-align: center !important;
+}
+
+
+
+
+ section.femme-hero .container .hero-content h1 {
+  transform: translateX(-60px) !important;
+  margin-left: -60px !important;
+}
+
+section.femme-hero .divisor {
+  transform: translateX(-60px) !important;
+  margin-left: -60px !important;
+}
 
 
 
