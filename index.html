@@ -2616,6 +2616,25 @@ if(window.innerWidth <= 768) {
 
 
 
+<script>
+(()=>{const ua=navigator.userAgent.toLowerCase(),isAndroid=ua.includes('android');
+const THRESH=isAndroid?14:12,MIN_MS=isAndroid?40:110,MAX_MS=600,COOLD=350;
+document.querySelectorAll('.flip-container').forEach(el=>{
+ let sx=0,sy=0,moved=false,t0=0,last=0;
+ const P=e=>(e.touches&&e.touches[0])||(e.changedTouches&&e.changedTouches[0])||e;
+ const down=e=>{const p=P(e);sx=p.clientX;sy=p.clientY;moved=false;t0=performance.now();};
+ const move=e=>{const p=P(e);if(Math.abs(p.clientX-sx)>THRESH||Math.abs(p.clientY-sy)>THRESH)moved=true;};
+ const up=e=>{const now=performance.now(),dt=now-t0;
+   if(!moved&&dt>=MIN_MS&&dt<=MAX_MS&&(now-last)>=COOLD){el.classList.toggle('flipped');last=now;}
+   if(e.target&&e.target.blur)e.target.blur(); e.preventDefault();
+ };
+ el.addEventListener('touchstart',down,{passive:true});
+ el.addEventListener('touchmove',move,{passive:true});
+ el.addEventListener('touchend',up,{passive:false});
+ el.addEventListener('mousedown',down); el.addEventListener('mousemove',move); el.addEventListener('mouseup',up);
+});})();
+</script>
+
 
 
 
