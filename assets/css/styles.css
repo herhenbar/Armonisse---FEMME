@@ -4589,64 +4589,53 @@ section.femme-hero .divisor {
     padding: 30px 15px !important;
   }
 }
-/* === FIX FLIP iOS/Safari (sem alterar desktop) === */
-.flip-container{
-  perspective:1000px;
-  -webkit-perspective:1000px;
-  cursor:pointer;
-  position:relative;
-  -webkit-tap-highlight-color:transparent;
-}
-
+/* ===== Base (mantém o 3D no desktop) ===== */
+.flip-container{ perspective:1000px; -webkit-perspective:1000px; position:relative; }
 .flip-card{
-  position:relative;
-  transform-style:preserve-3d;
-  -webkit-transform-style:preserve-3d;
+  position:relative; width:100%;
+  transform-style:preserve-3d; -webkit-transform-style:preserve-3d;
   transition:transform .6s;
-  will-change:transform;
-  /* evita flatten no iOS */
-  -webkit-transform:translateZ(0);
-  transform:translateZ(0);
+  /* garante proporção e impede empilhamento vertical */
+  aspect-ratio: 3 / 4; /* ajuste se quiser */
+  isolation:isolate; will-change:transform;
+}
+.flip-front,.flip-back{
+  position:absolute; inset:0;
+  backface-visibility:hidden; -webkit-backface-visibility:hidden;
+  overflow:hidden; display:block;
+}
+.flip-back{ transform:rotateY(180deg); -webkit-transform:rotateY(180deg); }
+.flip-container.flipped .flip-card{ transform:rotateY(180deg); -webkit-transform:rotateY(180deg); }
+.flip-front img,.flip-back img{ width:100%; height:100%; object-fit:cover; display:block; }
+
+/* ===== MOBILE “NUCLEAR” FALLBACK (iOS/Android) ===== */
+/* Em telas touch, desligamos 3D e fazemos crossfade para evitar o bug do Safari */
+@media (hover:none) and (pointer:coarse){
+  .flip-card{ transform:none !important; }
+  .flip-front,.flip-back{
+    transform:none !important; -webkit-transform:none !important;
+    opacity:0; transition:opacity .28s linear;
+    z-index:0;
+  }
+  .flip-front{ opacity:1; z-index:1; }
+  .flip-container.flipped .flip-front{ opacity:0; z-index:0; }
+  .flip-container.flipped .flip-back{ opacity:1; z-index:1; }
+
+  /* trava o tamanho p/ não “desmontar” e evitar empilhamento */
+  .flip-card{ min-height: 340px; }         /* ajuste ao seu design */
+  .flip-front img,.flip-back img{ object-fit:contain; }
+
+  /* evita navegação acidental se a imagem estiver dentro de <a> */
+  .flip-container a{ pointer-events:none; }
 }
 
-.flip-front,
-.flip-back{
-  position:absolute;
-  inset:0;
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
-  transform:rotateY(0);
-  -webkit-transform:rotateY(0);
-  overflow:hidden;
+/* ===== SAFARI iOS alvo extra (cinturão de segurança) ===== */
+@supports (-webkit-touch-callout: none) {
+  .flip-front,.flip-back{ -webkit-backface-visibility:hidden !important; }
+  .flip-card{ -webkit-transform:translateZ(0); }
 }
 
-.flip-back{
-  transform:rotateY(180deg);
-  -webkit-transform:rotateY(180deg);
-}
 
-.flip-container.flipped .flip-card{
-  transform:rotateY(180deg);
-  -webkit-transform:rotateY(180deg);
-}
-
-/* imagens não “vazam” e não piscam no iOS */
-.flip-front img,
-.flip-back img{
-  width:100%;
-  height:100%;
-  object-fit:cover;     /* troque para contain se preferir */
-  display:block;
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
-  -webkit-transform:translateZ(0);
-  transform:translateZ(0);
-}
-
-/* (Opcional) só mobile: centraliza sem mexer no desktop */
-@media (max-width:768px){
-  .flip-container{ margin:0 auto; }
-}
 
 
 
