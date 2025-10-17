@@ -4584,6 +4584,22 @@ html body .flip-container .flip-card .flip-back *{ position:static!important; }
 
 
 
+/* FIX: CTA sem linha embaixo */
+a.btn, a.button, a.cta,
+.btn a, .button a, .cta a,
+.btn, .button, .cta{
+  text-decoration:none !important;
+  border-bottom:0 !important;
+  box-shadow:none !important;
+  background-image:none !important;
+}
+.btn::after, .btn::before,
+.button::after, .button::before,
+.cta::after, .cta::before{
+  content:none !important;
+}
+.btn:hover, .button:hover, .cta:hover{ text-decoration:none !important; }
+
 
 
 
