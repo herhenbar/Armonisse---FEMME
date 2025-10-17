@@ -4584,21 +4584,25 @@ html body .flip-container .flip-card .flip-back *{ position:static!important; }
 
 
 
-/* FIX: CTA sem linha embaixo */
-a.btn, a.button, a.cta,
-.btn a, .button a, .cta a,
-.btn, .button, .cta{
-  text-decoration:none !important;
-  border-bottom:0 !important;
-  box-shadow:none !important;
-  background-image:none !important;
+/* Remover sublinhado apenas dos botões, sem tocar no design */
+a[class*="btn"],
+a[class*="button"],
+a[class*="cta"]{
+  text-decoration: none !important;
+  border-bottom: 0 !important;
 }
-.btn::after, .btn::before,
-.button::after, .button::before,
-.cta::after, .cta::before{
-  content:none !important;
+a[class*="btn"]:hover,
+a[class*="button"]:hover,
+a[class*="cta"]:hover{
+  text-decoration: none !important;
 }
-.btn:hover, .button:hover, .cta:hover{ text-decoration:none !important; }
+
+/* Garantia → voltar pros combos (sem sublinhado) */
+#garantia a[href*="combo"],
+.garantia a[href*="combo"]{
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+}
 
 
 
