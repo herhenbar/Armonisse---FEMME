@@ -4466,23 +4466,7 @@ section.femme-hero .divisor {
   margin-left: -60px !important;
 }
 
-
-
-
-/* HERO MOBILE - REDESIGN TOTAL */
-@media (max-width: 768px) {
-    .femme-hero {
-        padding: 40px 15px 60px !important;
-        background: linear-gradient(135deg, #fff8fc 0%, #f9d7e2 100%) !important;
-        min-height: auto !important;
-        position: relative !important;
-    }
-    
-    /* MATA AS BORBOLETAS NO MOBILE */
-    .borboletas {
-        display: none !important;
-    }
-    
+      
     /* REPOSICIONA TODO O CONTEÚDO */
     .hero-content {
         position: relative !important;
@@ -4502,32 +4486,6 @@ section.femme-hero .divisor {
         color: #7a2d44 !important;
         text-shadow: none !important;
     }
-
-
-
-
-
-
-/* FIX FLIP CARDS ON MOBILE */
-@media (max-width: 768px) {
-  .flip-container {
-    width: 250px !important;
-    height: 350px !important;
-    margin: 0 auto !important;
-  }
-  
-  .flip-card {
-    height: 350px !important;
-  }
-  
-  .flip-front img, .flip-back img {
-    height: 100% !important;
-    width: 100% !important;
-    object-fit: contain !important;
-  }
-}
-
-
 
 /* FIX COMBO CTA ON MOBILE */
 @media (max-width: 768px) {
@@ -4589,6 +4547,7 @@ section.femme-hero .divisor {
     padding: 30px 15px !important;
   }
 }
+
 /* FLIP ULTRA-NUCLEAR — sem 3D, sem teleporte, mesmo slot */
 .flip-container{ position:relative!important; display:block!important; width:100%!important; max-width:320px!important; margin:0 auto 24px!important; }
 .flip-card{
@@ -4622,6 +4581,13 @@ html body .flip-container .flip-card .flip-back img{
 
 /* Neutraliza qualquer regra global que empurre a .flip-back pro fluxo */
 html body .flip-container .flip-card .flip-back *{ position:static!important; }
+
+
+
+
+
+
+
 
 
 
