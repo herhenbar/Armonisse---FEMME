@@ -4589,128 +4589,66 @@ section.femme-hero .divisor {
     padding: 30px 15px !important;
   }
 }
-/* ===== Base (mantém o 3D no desktop) ===== */
-.flip-container{ perspective:1000px; -webkit-perspective:1000px; position:relative; }
+
+    /* === FLIP SÓLIDO (clonado do modelo que funciona) === */
+
+/* Slot e perspectiva */
+.product-images{ gap:20px; justify-content:space-around; align-items:flex-start; }
+.flip-container{
+  position:relative;
+  perspective:1000px; -webkit-perspective:1000px;
+  display:inline-block;
+  width:30%; max-width:250px;
+}
+
+/* Mantém altura do slot em qualquer estado (evita “buraco em branco”) */
 .flip-card{
   position:relative; width:100%;
   transform-style:preserve-3d; -webkit-transform-style:preserve-3d;
   transition:transform .6s;
-  /* garante proporção e impede empilhamento vertical */
-  aspect-ratio: 3 / 4; /* ajuste se quiser */
-  isolation:isolate; will-change:transform;
+  will-change:transform;
 }
+.flip-card::before{
+  content:""; display:block;
+  /* proporção de capa 2:3 (ajuste se sua arte for outra) */
+  padding-top:150%;
+}
+
+/* Faces SEMPRE sobrepostas no mesmo slot */
 .flip-front,.flip-back{
   position:absolute; inset:0;
   backface-visibility:hidden; -webkit-backface-visibility:hidden;
-  overflow:hidden; display:block;
+  overflow:hidden;
 }
-.flip-back{ transform:rotateY(180deg); -webkit-transform:rotateY(180deg); }
-.flip-container.flipped .flip-card{ transform:rotateY(180deg); -webkit-transform:rotateY(180deg); }
-.flip-front img,.flip-back img{ width:100%; height:100%; object-fit:cover; display:block; }
-
-/* ===== MOBILE “NUCLEAR” FALLBACK (iOS/Android) ===== */
-/* Em telas touch, desligamos 3D e fazemos crossfade para evitar o bug do Safari */
-@media (hover:none) and (pointer:coarse){
-  .flip-card{ transform:none !important; }
-  .flip-front,.flip-back{
-    transform:none !important; -webkit-transform:none !important;
-    opacity:0; transition:opacity .28s linear;
-    z-index:0;
-  }
-  .flip-front{ opacity:1; z-index:1; }
-  .flip-container.flipped .flip-front{ opacity:0; z-index:0; }
-  .flip-container.flipped .flip-back{ opacity:1; z-index:1; }
-
-  /* trava o tamanho p/ não “desmontar” e evitar empilhamento */
-  .flip-card{ min-height: 340px; }         /* ajuste ao seu design */
-  .flip-front img,.flip-back img{ object-fit:contain; }
-
-  /* evita navegação acidental se a imagem estiver dentro de <a> */
-  .flip-container a{ pointer-events:none; }
+.flip-back{
+  transform:rotateY(180deg); -webkit-transform:rotateY(180deg);
 }
 
-/* ===== SAFARI iOS alvo extra (cinturão de segurança) ===== */
-@supports (-webkit-touch-callout: none) {
-  .flip-front,.flip-back{ -webkit-backface-visibility:hidden !important; }
-  .flip-card{ -webkit-transform:translateZ(0); }
+/* Virar */
+.flip-container.flipped .flip-card{
+  transform:rotateY(180deg); -webkit-transform:rotateY(180deg);
 }
 
-/* ===== Desktop mantém seu 3D atual ===== */
-@media (min-width:769px){
-  /* nada aqui pra não interferir no que já está liso */
+/* Imagens ocupam o slot exato (não cortam, não “descem” pro CTA) */
+.flip-front img,.flip-back img{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:contain; display:block;
+  -webkit-transform:translateZ(0); transform:translateZ(0);
+  border:none; box-shadow:0 3px 10px rgba(0,0,0,.3);
 }
 
-/* ===== MOBILE FIX NUCLEAR 2.0 (iOS + Android) ===== */
+/* —— MOBILE: mantém o mesmo slot e layout empilhado, sem bug —— */
 @media (max-width:768px){
-  /* slot com altura fixa por ratio (sem cortar e sem colapsar) */
-  .flip-container{
-    --ratio: 133.333%; /* 3:4 padrão capa. Se sua capa for 2:3 use 150% */
-    position: relative;
-    display:block;
-    width:100%;
-  }
-
-  .flip-card{
-    position: relative !important;
-    transform: none !important;
-    -webkit-transform:none !important;
-    will-change: opacity, transform;
-    isolation:isolate;
-  }
-
-  /* cria a altura do slot pela proporção (sem aspect-ratio) */
-  .flip-card::before{
-    content:"";
-    display:block;
-    padding-top: var(--ratio);
-  }
-
-  /* faces sobrepostas no MESMO slot */
-  .flip-front,
-  .flip-back{
-    position: absolute !important;
-    inset: 0 !important;
-    margin:0 !important;
-    transform: none !important;
-    -webkit-transform: none !important;
-    backface-visibility: hidden !important;
-    -webkit-backface-visibility: hidden !important;
-    opacity:0;
-    transition: opacity .25s linear;
-    z-index:0;
-  }
-  .flip-front{ opacity:1; z-index:1; }
-  .flip-container.flipped .flip-front{ opacity:0; z-index:0; }
-  .flip-container.flipped .flip-back{ opacity:1; z-index:1; }
-
-  /* imagens nunca cortam (contain), nem somem */
-  .flip-front img,
-  .flip-back img{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    object-fit: contain;          /* evita “fim cortado” */
-    display:block;
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    image-rendering: auto;
-  }
-
-  /* se houver links no verso que te jogam pro checkout no toque,
-     você pode reabilitar clique só quando estiver flipped: */
-  .flip-container a{ pointer-events: none; }
-  .flip-container.flipped a{ pointer-events: auto; }
+  .product-images{ flex-direction:column; align-items:center; }
+  .flip-container{ width:100%; max-width:320px; margin-bottom:30px; }
+  .flip-card::before{ padding-top:150%; } /* mantém a altura no toque */
 }
 
-/* ===== Opcional: ajustes de proporção por card (sem mudar HTML) ===== */
-/* Se uma capa específica for 2:3, force via seletor de ordem (exemplos) */
-@media (max-width:768px){
-  /* exemplo: o 2º card é 2:3 */
-  .flip-container:nth-of-type(2){ --ratio:150%; }
-  /* exemplo: o 3º card é 1:1.5 (66.66% = retrato alto) -> ajuste conforme precisar */
-  /* .flip-container:nth-of-type(3){ --ratio:160%; } */
+/* Cinto de segurança contra CSS externos que bagunçam as faces */
+.flip-front,.flip-back,.flip-card,.flip-container{
+  contain:layout paint; isolation:isolate;
 }
-
-
 
 
 
