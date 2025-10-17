@@ -4589,59 +4589,66 @@ section.femme-hero .divisor {
     padding: 30px 15px !important;
   }
 }
-
-
-.flip-container {
-  perspective: 1000px;
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-  cursor: pointer;
+/* === FIX FLIP iOS/Safari (sem alterar desktop) === */
+.flip-container{
+  perspective:1000px;
+  -webkit-perspective:1000px;
+  cursor:pointer;
+  position:relative;
+  -webkit-tap-highlight-color:transparent;
 }
 
-.flip-card {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  transform-style: preserve-3d;
-  transition: transform 0.6s ease;
-}
-
-.flip-container.flipped .flip-card {
-  transform: rotateY(180deg);
+.flip-card{
+  position:relative;
+  transform-style:preserve-3d;
+  -webkit-transform-style:preserve-3d;
+  transition:transform .6s;
+  will-change:transform;
+  /* evita flatten no iOS */
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0);
 }
 
 .flip-front,
-.flip-back {
-  position: absolute;
-  inset: 0;
-  backface-visibility: hidden;
-  overflow: hidden;
+.flip-back{
+  position:absolute;
+  inset:0;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  transform:rotateY(0);
+  -webkit-transform:rotateY(0);
+  overflow:hidden;
 }
 
-.flip-back {
-  transform: rotateY(180deg);
+.flip-back{
+  transform:rotateY(180deg);
+  -webkit-transform:rotateY(180deg);
 }
 
+.flip-container.flipped .flip-card{
+  transform:rotateY(180deg);
+  -webkit-transform:rotateY(180deg);
+}
+
+/* imagens não “vazam” e não piscam no iOS */
 .flip-front img,
-.flip-back img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: 12px;
+.flip-back img{
+  width:100%;
+  height:100%;
+  object-fit:cover;     /* troque para contain se preferir */
+  display:block;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  -webkit-transform:translateZ(0);
+  transform:translateZ(0);
 }
 
-/* Mobile fix */
-@media (max-width: 768px) {
-  .flip-container {
-    max-width: 90vw;
-  }
-
-  .flip-card {
-    aspect-ratio: 3 / 4;
-  }
+/* (Opcional) só mobile: centraliza sem mexer no desktop */
+@media (max-width:768px){
+  .flip-container{ margin:0 auto; }
 }
+
+
 
 
 
