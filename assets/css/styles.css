@@ -4635,6 +4635,51 @@ section.femme-hero .divisor {
   .flip-card{ -webkit-transform:translateZ(0); }
 }
 
+/* ===== MOBILE FIX: travar slot e sobrepor faces (Android + iOS) ===== */
+@media (hover:none) and (pointer:coarse){
+  /* o “buraco em branco” some porque o slot fica com altura fixa */
+  .flip-container{
+    position:relative;
+    display:block;
+    isolation:isolate;           /* cria contexto p/ z-index */
+    contain:layout paint;        /* impede vazamento de layout */
+  }
+
+  .flip-card{
+    position:relative !important;
+    width:100% !important;
+    height:auto !important;
+    aspect-ratio: 3 / 4;         /* ajuste se sua capa for 2:3 etc. */
+    transform:none !important;   /* desliga 3D no mobile */
+  }
+
+  /* FACES SOBREPOSTAS NO MESMO SLOT */
+  .flip-front, .flip-back{
+    position:absolute !important;
+    inset:0 !important;
+    margin:0 !important;
+    backface-visibility:hidden !important;
+    -webkit-backface-visibility:hidden !important;
+    transform:none !important;
+    opacity:0;
+    transition:opacity .25s linear;
+    z-index:0;
+  }
+  .flip-front{ opacity:1; z-index:1; }
+  .flip-container.flipped .flip-front{ opacity:0; z-index:0; }
+  .flip-container.flipped .flip-back{ opacity:1; z-index:1; }
+
+  /* imagens/links não quebram o slot */
+  .flip-front a, .flip-back a{ display:block; height:100%; }
+  .flip-front img, .flip-back img{
+    width:100%; height:100%; object-fit:contain; display:block;
+  }
+
+  /* evita “pulo pro checkout” ao tocar pra virar; se precisar, reabilita só no estado flipped */
+  .flip-container a{ pointer-events:none; }
+  .flip-container.flipped a{ pointer-events:auto; }
+}
+
 
 
 
