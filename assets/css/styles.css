@@ -4653,3 +4653,71 @@ section.femme-hero .divisor {
 
 
 
+/* === FLIP RESCUE: força altura do slot e sobreposição das faces === */
+
+/* Slot base */
+.flip-container{
+  position:relative !important;
+  display:block !important;
+  width:100%;
+  max-width:320px;
+  margin:0 auto 24px;
+  perspective:1000px; -webkit-perspective:1000px;
+  isolation:isolate;
+}
+
+/* Mantém ALTURA (seu “vazio” é altura=0) */
+.flip-card{
+  position:relative !important;
+  width:100% !important;
+  transform-style:preserve-3d; -webkit-transform-style:preserve-3d;
+  transition:transform .6s;
+}
+/* cria altura por proporção (2:3). Se suas capas forem 3:4, troque p/ 133.333% */
+.flip-card::before{ content:""; display:block; padding-top:150%; }
+/* browsers com aspect-ratio nativo */
+@supports (aspect-ratio: 2 / 3){
+  .flip-card::before{ display:none; }
+  .flip-card{ aspect-ratio: 2 / 3; }
+}
+
+/* Faces SEMPRE sobrepostas no mesmo slot */
+.flip-front, .flip-back{
+  position:absolute !important; inset:0 !important; margin:0 !important;
+  display:block !important; overflow:hidden;
+  backface-visibility:hidden !important; -webkit-backface-visibility:hidden !important;
+  transform:none !important; /* evita bug 3D no mobile */
+  opacity:0; transition:opacity .25s linear;
+  z-index:0;
+}
+.flip-front{ opacity:1; z-index:1; }
+.flip-container.flipped .flip-front{ opacity:0; z-index:0; }
+.flip-container.flipped .flip-back{ opacity:1; z-index:1; }
+
+/* Imagem ocupa o slot SEM cortar e SEM sumir */
+.flip-front img, .flip-back img{
+  position:absolute !important; inset:0 !important;
+  width:100% !important; height:100% !important;
+  object-fit:contain !important; display:block !important;
+  -webkit-transform:translateZ(0); transform:translateZ(0);
+  visibility:visible !important;
+}
+
+/* Desktop mantém 3D que já estava “liso” */
+@media (min-width:769px){
+  .flip-container.flipped .flip-card{
+    transform:rotateY(180deg); -webkit-transform:rotateY(180deg);
+  }
+  .flip-back{ transform:rotateY(180deg); -webkit-transform:rotateY(180deg); }
+}
+
+/* Mobile: sem 3D (evita empilhar/teleportar) */
+@media (max-width:768px){
+  .flip-card{ transform:none !important; }
+}
+
+/* Anti-interferência: neutraliza qualquer regra antiga que esconda as imagens */
+.flip-container *, .flip-container img{
+  filter:none !important; opacity:unset;
+}
+
