@@ -2617,23 +2617,47 @@ if(window.innerWidth <= 768) {
 
 
 <script>
-(()=>{const ua=navigator.userAgent.toLowerCase(),isAndroid=ua.includes('android');
-const THRESH=isAndroid?14:12,MIN_MS=isAndroid?40:110,MAX_MS=600,COOLD=350;
-document.querySelectorAll('.flip-container').forEach(el=>{
- let sx=0,sy=0,moved=false,t0=0,last=0;
- const P=e=>(e.touches&&e.touches[0])||(e.changedTouches&&e.changedTouches[0])||e;
- const down=e=>{const p=P(e);sx=p.clientX;sy=p.clientY;moved=false;t0=performance.now();};
- const move=e=>{const p=P(e);if(Math.abs(p.clientX-sx)>THRESH||Math.abs(p.clientY-sy)>THRESH)moved=true;};
- const up=e=>{const now=performance.now(),dt=now-t0;
-   if(!moved&&dt>=MIN_MS&&dt<=MAX_MS&&(now-last)>=COOLD){el.classList.toggle('flipped');last=now;}
-   if(e.target&&e.target.blur)e.target.blur(); e.preventDefault();
- };
- el.addEventListener('touchstart',down,{passive:true});
- el.addEventListener('touchmove',move,{passive:true});
- el.addEventListener('touchend',up,{passive:false});
- el.addEventListener('mousedown',down); el.addEventListener('mousemove',move); el.addEventListener('mouseup',up);
-});})();
+(()=> {
+  const THRESH = 18;     // tolerância de movimento (px) - maior = menos falso positivo
+  const MIN_MS = 20;     // toque mínimo (ms) - menor = pega tap rápido
+  const MAX_MS = 520;    // acima disso ignora (long-press)
+  const COOLD  = 250;    // debounce entre flips (ms)
+
+  document.querySelectorAll('.flip-container').forEach(el=>{
+    let sx=0, sy=0, moved=false, t0=0, last=0, pid=null;
+
+    const down = e=>{
+      // só 1 dedo
+      if (e.pointerType==='touch' && e.isPrimary===false) return;
+      pid=e.pointerId; sx=e.clientX; sy=e.clientY; moved=false; t0=performance.now();
+    };
+    const move = e=>{
+      if (pid!==e.pointerId) return;
+      if (Math.abs(e.clientX-sx)>THRESH || Math.abs(e.clientY-sy)>THRESH) moved=true;
+    };
+    const up = e=>{
+      if (pid!==e.pointerId) return;
+      const now=performance.now(), dt=now-t0;
+      pid=null;
+      if(!moved && dt>=MIN_MS && dt<=MAX_MS && (now-last)>=COOLD){
+        el.classList.toggle('flipped'); last=now;
+      }
+    };
+
+    el.addEventListener('pointerdown', down, {passive:true});
+    el.addEventListener('pointermove',  move, {passive:true});
+    el.addEventListener('pointerup',    up);
+    el.addEventListener('pointercancel', ()=>{ pid=null; });
+    // fallback p/ cliques muito rápidos em alguns Androids
+    el.addEventListener('click', (e)=>{
+      if (performance.now()-last>COOLD) { el.classList.toggle('flipped'); last=performance.now(); }
+      e.preventDefault();
+    }, true);
+  });
+})();
 </script>
+
+
 
 
 
