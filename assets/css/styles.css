@@ -4607,6 +4607,11 @@ a[class*="cta"]:hover{
 
 
 
+.flip-container, .flip-container a, .flip-container img{
+  -webkit-tap-highlight-color:transparent; -webkit-touch-callout:none;
+  outline:0; user-select:none; -webkit-user-drag:none;
+}
+
 
 
 
