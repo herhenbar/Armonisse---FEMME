@@ -4614,6 +4614,9 @@ a[class*="cta"]:hover{
 
 
 
+html{scroll-behavior:smooth;}
+#combos{scroll-margin-top:120px;} /* ajuste se tiver header fixo */
+
 
 
 
