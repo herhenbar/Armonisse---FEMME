@@ -4619,4 +4619,12 @@ html{scroll-behavior:smooth;}
 
 
 
+.garantia a[href="#combos"]{ pointer-events:auto; position:relative; z-index:10; }
+.garantia::before,.garantia::after,
+.garantia [class*="overlay"], .garantia [class*="mask"], .garantia .decor{
+  pointer-events:none !important;
+}
+html{ scroll-behavior:smooth; }
+#combos{ scroll-margin-top:120px; } /* ajuste se tiver header fixo */
+
 
