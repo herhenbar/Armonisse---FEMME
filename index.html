@@ -2599,9 +2599,9 @@ setInterval(() => {
 <script>
 (()=> {
   const THRESH = 20;     // tolerância de movimento (px) - maior = menos falso positivo
-  const MIN_MS = 120;     // toque mínimo (ms) - menor = pega tap rápido
+  const MIN_MS = 150;     // toque mínimo (ms) - menor = pega tap rápido
   const MAX_MS = 700;    // acima disso ignora (long-press)
-  const COOLD  = 400;    // debounce entre flips (ms)
+  const COOLD  = 500;    // debounce entre flips (ms)
 
   document.querySelectorAll('.flip-container').forEach(el=>{
     let sx=0, sy=0, moved=false, t0=0, last=0, pid=null;
@@ -2668,6 +2668,7 @@ setInterval(() => {
   tick();
 })();
 </script>
+
 
 
 
