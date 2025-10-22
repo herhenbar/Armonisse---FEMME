@@ -4628,3 +4628,10 @@ html{ scroll-behavior:smooth; }
 #combos{ scroll-margin-top:120px; } /* ajuste se tiver header fixo */
 
 
+/* flip mais lento e elegante no mobile */
+@media (max-width:768px){
+  .flip-front,.flip-back{
+    transition: opacity .38s cubic-bezier(.22,.61,.36,1);
+  }
+}
+
